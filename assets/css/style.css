@@ -1,0 +1,263 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-v51-latin-regular.woff2') format('woff2');
+}
+
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/roboto-v51-latin-700.woff2') format('woff2');
+}
+
+/* Bosnia-PersonalUse */
+@font-face {
+  font-display: swap;
+  font-family: 'Bosnia-PersonalUse.woff2';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Bosnia-PersonalUse.woff2') format('woff2');
+}
+
+/* Clab Personal Use-Regular */
+@font-face {
+  font-display: swap;
+  font-family: 'Clab Personal Use-Regular.woff2';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Clab Personal Use-Regular.woff2') format('woff2');
+}
+
+/* Bradley hand  */
+
+@font-face {
+  font-family: 'Bradley Hand';
+  src: url('../fonts/bradlay-hand.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Styles start */
+
+:root {
+  --font-family: "Roboto", sans-serif;
+  --second-family: "Clab", sans-serif;
+  --third-family: "Bosnia", sans-serif;
+  --font3: "Bradley Hand", cursive;
+  /* colors */
+  --body-bg: #242527;
+  --text-clr: #e4f5ff;
+  --link-clr: #fbfcff;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  color: var(--text-clr);
+  background: var(--body-bg);
+}
+
+.wrapper {
+  --container-width: 1360px;
+  --gap-padding-inline: 40px;
+  display: grid;
+  column-gap: var(--gap-padding-inline);
+  grid-template-columns: 1fr min(var(--container-width), 100% - var(--gap-padding-inline) * 2) 1fr;
+
+  &>* {
+    grid-column: 2;
+  }
+
+  .full-bleed {
+    grid-column: 1/-1;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.button {
+  width: fit-content;
+  padding: 14px 32px;
+  display: inline-block;
+  border: 1px solid var(--text-clr);
+  color: var(--text-clr);
+  text-transform: capitalize;
+  font-size: 21px;
+  font-weight: 300;
+  background: #242527;
+  transition: 150ms ease-in-out;
+  transition-property: background, opacity;
+}
+
+.button:hover {
+  opacity: 0.6;
+  background: #00000013;
+}
+
+/* design start */
+.main {
+  padding-block: 40px 70px;
+}
+
+/* header start */
+.header {}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo-container {
+  min-width: 265px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  color: var(--text-clr);
+  line-height: 1;
+  font-weight: 400;
+  font-family: var(--third-family);
+}
+
+.logo svg {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+.logo__text {
+  align-self: flex-end;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-clr);
+  font-family: var(--font3);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.nav__links li:not(li:has(button)) {
+  position: relative;
+  padding-inline: 10px;
+}
+
+.nav__links li:has(a)::after {
+  position: absolute;
+  right: -16px;
+  top: 2px;
+  content: url("../images/svg/sound-sm.svg");
+}
+
+.nav__links li:nth-child(6)::after {
+  content: none;
+}
+
+.nav__links li:has(button) {
+  margin-inline-start: 88px;
+}
+
+.nav__link {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 21px;
+  color: var(--link-clr);
+  font-family: var(--second-family);
+  transition: opacity .33s ease;
+}
+
+.nav__link.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.nav__link:hover {
+  opacity: 0.5;
+}
+
+/* header end */
+
+/* hero start */
+
+.hero {
+  padding-block: 25px 76px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 50px;
+}
+
+.hero__text-wrapper {
+  max-width: 620px;
+}
+
+.hero__heading {
+  margin: 0;
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.hero__subheading {
+  margin-block-start: 30px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.hero__image-shadow-wrapper {
+  width: fit-content;
+  filter: drop-shadow(0 0 15px rgba(228, 245, 255, 0.6));
+}
+
+.image-mask-container {
+  position: relative;
+  width: 630px;
+  height: 686px;
+  background-color: #000;
+  padding: 2px;
+  clip-path: url(#my-blob-clip);
+  -webkit-clip-path: url(#my-blob-clip);
+}
+
+.masked-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: url(#my-blob-clip);
+  -webkit-clip-path: url(#my-blob-clip);
+}
+
+
+
+/* hero end */
