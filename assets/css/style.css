@@ -59,10 +59,11 @@
 
 body {
   margin: 0;
-  font-size: 16px;
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--text-clr);
   background: var(--body-bg);
 }
@@ -262,20 +263,75 @@ body {
 
 /* women database start */
 
-.women-database {}
+.women-database {
+  border: 1px solid #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 60px;
+}
 
-.women-database__card {}
+.women-database__card {
+  min-height: 280px;
+  display: grid;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(228, 245, 255, 0.5);
+  transition: transform 0.3s ease;
+}
 
-.women-database__img {}
+.women-database__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
 
-.women-database__info {}
+.women-database__img {
+  grid-area: 1/-1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
 
-.women-database__name {}
+.women-database__card:hover .women-database__img {
+  filter: grayscale(0%);
+}
 
-.women-database__location {}
+.women-database__info {
+  grid-area: 1/-1;
+  align-self: end;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 16px 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  transition: background-color 0.33s ease;
+}
 
-.women-database__link {}
+.women-database__card:hover .women-database__info {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-.women-database__handle {}
+.women-database__name {
+  margin: 0;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.women-database__location {
+  margin: 0;
+  font-size: 14px;
+}
+
+.women-database__link,
+.women-database__handle {
+  font-size: 13px;
+}
+
+.women-database__link {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* women database end */
