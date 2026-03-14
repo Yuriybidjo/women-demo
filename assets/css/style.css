@@ -258,6 +258,24 @@ body {
   -webkit-clip-path: url(#my-blob-clip);
 }
 
-
-
 /* hero end */
+
+/* women database start */
+
+.women-database {}
+
+.women-database__card {}
+
+.women-database__img {}
+
+.women-database__info {}
+
+.women-database__name {}
+
+.women-database__location {}
+
+.women-database__link {}
+
+.women-database__handle {}
+
+/* women database end */
