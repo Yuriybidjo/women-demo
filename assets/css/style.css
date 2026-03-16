@@ -263,12 +263,54 @@ body {
 
 /* women database start */
 
-.women-database {
-  border: 1px solid #fff;
+.women-database__inner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 60px;
 }
+
+/* filter */
+
+.women-database__filter {
+  margin-block-end: 55px;
+}
+
+.women-database__btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.women-database__btns-item {
+  position: relative;
+}
+
+.women-database__btns-item:not(:last-child){
+  padding-inline-end: 40px;
+}
+
+.women-database__btns-item::after {
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  content: "//";
+  font-size: 21px;
+}
+
+.women-database__btns-item button {
+  padding: 0;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 21px;
+  color: var(--text-clr);
+}
+
+.is-active {}
+
+/* cards */
 
 .women-database__card {
   min-height: 280px;
